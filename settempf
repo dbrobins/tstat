@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+        echo "syntax: $0 <low> <high>"
+        exit 1
+fi
+
+CFromF()
+{
+        echo $((($1-32)*1000*5/9))
+}
+
+lo=$1
+hi=$2
+
+echo "set $(CFromF $lo) $(CFromF $hi)" | nc -c localhost 10000
