@@ -1,0 +1,10 @@
+[Unit]
+Description=Thermostat controller
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/alarm/tstat/tstat
+
+[Install]
+WantedBy=multi-user.target
